@@ -3,16 +3,18 @@ block content
   .container
       h2 
         p
-         | Dani Weather App
+         | Tu Tiempo App
+      br
+      br
       br
       br
       .row
         .col-md-3
           form(method="post", action="get_weather")
             .form-group
-              label.sr-only(for="city") City Name
-              input.form-control( name="city" type="text" placeholder="Enter City Name (for ex: New York)" required='required')
-            button.btn.btn-success(type="submit") Get Weather
+              label.sr-only(for="city") Ciudad
+              input.form-control( name="city" type="text" placeholder="Enter City Name (for ex: Rincon de la Victoria)" required='required')
+            button.btn.btn-success(type="submit") El Tiempo
       if error
         br
         .alert.alert-danger #{error}
@@ -22,7 +24,7 @@ block content
             p
             br
             .panel.panel-primary
-              .panel-heading Weather for: #{weather.name}, #{weather.sys.country}
+              .panel-heading El Tiempo: #{weather.name}, #{weather.sys.country}
               .panel-body
                p Current Temperature = #{weather.main.temp} !{units}, #{weather.weather[0].description}
                p Humidity = #{weather.main.humidity} &#37;
